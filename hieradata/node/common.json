@@ -1,0 +1,6 @@
+{
+  "backuppc::client::srv_tag": "bpc_tag",
+  "backuppc::client::use_frontend": true,
+  "backuppc::client::public_domain": "example.com",
+  "wg::nginx::ensure_pkg": "latest"
+}

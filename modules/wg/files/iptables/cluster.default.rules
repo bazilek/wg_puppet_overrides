@@ -1,0 +1,14 @@
+# managed by puppet
+
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:RH-Firewall-1-INPUT - [0:0]
+-A INPUT -i eth0 -p udp -m multiport --ports 20018:20019 -j DROP 
+-A INPUT -i eth0 -m pkttype --pkt-type broadcast -j DROP 
+-A INPUT -i eth0 -m pkttype --pkt-type multicast -j DROP 
+-A OUTPUT -o eth0 -p udp -m multiport --ports 20018:20019 -j DROP 
+-A OUTPUT -o eth0 -m pkttype --pkt-type broadcast -j DROP 
+-A OUTPUT -o eth0 -m pkttype --pkt-type multicast -j DROP 
+COMMIT

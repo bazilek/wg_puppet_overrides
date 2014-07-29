@@ -1,0 +1,27 @@
+
+1. your test node hostname assumed as my_hostname.my.domain
+
+2. use dev.pp for my_hostname.my.domain declaration
+├── manifests
+│   └── clusters
+│       └── dev.pp
+
+3. use hieradata/node/common.json for parameters and data
+├── hieradata
+│   └── node
+│       └── common.json
+
+or use more specific place
+├── hieradata
+│   └── node
+│       └── my_hostname.my.domain.json
+
+4. update aliases if you want to get root emails
+└── modules
+    └── wg
+        ├── files
+        │   ├── etc.aliases
+
+5. update or create anything you want - it's going to override files from puppet-dev
+
+6. put overrides into puppet-dev/overrides directory
