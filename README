@@ -6,10 +6,10 @@
 │   └── clusters
 │       └── dev.pp
 
-3. use hieradata/node/common.json for parameters and data
+3. use hieradata/region/staging.json for parameters and data
 ├── hieradata
-│   └── node
-│       └── common.json
+│   └── region
+│       └── staging.json
 
 or use more specific place
 ├── hieradata
