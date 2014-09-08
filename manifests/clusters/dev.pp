@@ -1,3 +1,30 @@
+if $::kernel in [ 'Linux', 'SunOS' ] {
+
+  Exec{
+    path => '/usr/bin:/usr/sbin/:/bin:/sbin',
+  }
+
+  File{
+    mode          => '0644',
+    owner         => 'root',
+    group         => 'root',
+  }
+
+}
+
+if $::kernel == 'Linux' {
+  Package{
+    allow_virtual => true,
+  }
+}
+
+if ($::operatingsystem == 'OracleLinux') and ($::operatingsystemmajrelease == 5) {
+  Package {
+    provider => 'yum',
+  }
+}
+
+
 node 'my_hostname.my.domain' {
 
   include wg::common
